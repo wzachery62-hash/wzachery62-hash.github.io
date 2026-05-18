@@ -1,168 +1,406 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unstoppable You 365</title>
-    <style>
-        :root {
-            --bg-dark: #121212;
-            --text-light: #f5f5f7;
-            --text-muted: #86868b;
-            --accent-gold: #d4af37;
-        }
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-            overflow-x: hidden;
-        }
-        .container {
-            max-width: 1200px;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-        @media (max-width: 768px) {
-            .container {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-            .form-box {
-                margin: 0 auto;
-            }
-        }
-        .hero-side {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
-        .brand-tag {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent-gold);
-            font-weight: 600;
-        }
-        h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -1px;
-        }
-        .quote {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: var(--text-muted);
-            max-width: 500px;
-        }
-        .form-side {
-            display: flex;
-            justify-content: flex-end;
-        }
-        .form-box {
-            background: #1c1c1e;
-            border: 1px solid #2c2c2e;
-            border-radius: 16px;
-            padding: 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-        }
-        h2 {
-            font-size: 1.75rem;
-            margin-bottom: 12px;
-            font-weight: 600;
-        }
-        .form-desc {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 28px;
-        }
-        .input-group {
-            position: relative;
-            margin-bottom: 20px;
-        }
-        input[type="email"] {
-            width: 100%;
-            padding: 16px;
-            background: #2c2c2e;
-            border: 1px solid #3a3a3c;
-            border-radius: 8px;
-            color: #fff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-        input[type="email"]:focus {
-            outline: none;
-            border-color: var(--accent-gold);
-            background: #3a3a3c;
-        }
-        button {
-            width: 100%;
-            padding: 16px;
-            background: var(--text-light);
-            color: var(--bg-dark);
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 8px;
-        }
-        button:hover {
-            background: var(--accent-gold);
-            transform: translateY(-2px);
-        }
-        button:active {
-            transform: translateY(0);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unstoppable You 365 | Resilience, Faith, & Leadership</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* Premium Dark & Gold Editorial Aesthetic */
+    :root {
+      --bg-dark: #0a0f1d;
+      --card-bg: #131a2e;
+      --accent-gold: #d4af37;
+      --accent-orange: #e67e22;
+      --text-light: #f5f6fa;
+      --text-muted: #a0aec0;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      background-color: var(--bg-dark); 
+      color: var(--text-light); 
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* Cinematic Hero Banner */
+    .hero {
+      position: relative;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(rgba(10, 15, 29, 0.5), rgba(10, 15, 29, 0.95)), 
+                  url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070') no-repeat center center/cover;
+    }
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: 6px;
+      color: #fff;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+    .hero-content p {
+      font-size: 1.4rem;
+      color: var(--accent-gold);
+      letter-spacing: 3px;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    /* Core Pillars Navigation */
+    .pillar-nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px 10px;
+      background: #0d1527;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    }
+    .pillar-btn {
+      background: transparent;
+      border: 1px solid var(--text-muted);
+      color: var(--text-light);
+      padding: 10px 24px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .pillar-btn.active, .pillar-btn:hover {
+      border-color: var(--accent-gold);
+      color: var(--accent-gold);
+      background: rgba(212, 175, 55, 0.05);
+    }
+
+    /* Dynamic Reading Engine Grid */
+    .content-section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    .story-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 40px;
+      border-left: 4px solid var(--accent-gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      display: none;
+    }
+    .story-card.active { display: block; animation: fadeIn 0.5s ease; }
+    .story-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--accent-gold);
+      margin-bottom: 20px;
+    }
+    .story-body {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      margin-bottom: 30px;
+      white-space: pre-line;
+    }
+    .framework-box {
+      background: rgba(10, 15, 29, 0.6);
+      padding: 25px;
+      border-radius: 6px;
+      border: 1px dashed rgba(212, 175, 55, 0.3);
+    }
+    .framework-title {
+      font-weight: 800;
+      color: var(--accent-orange);
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .steps-list { list-style: none; }
+    .steps-list li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+    }
+    .steps-list li::before {
+      content: attr(data-step);
+      position: absolute;
+      left: 0;
+      color: var(--accent-gold);
+      font-weight: 800;
+    }
+
+    /* Prayer & Alignment Alignment Engine Form */
+    .prayer-container {
+      max-width: 600px;
+      margin: 60px auto;
+      background: var(--card-bg);
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.05);
+      text-align: center;
+    }
+    .prayer-container h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--accent-gold);
+      margin-bottom: 10px;
+    }
+    .prayer-container p { color: var(--text-muted); margin-bottom: 25px; }
+    .form-group { margin-bottom: 20px; text-align: left; }
+    .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+    .form-control {
+      width: 100%;
+      padding: 12px;
+      background: var(--bg-dark);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: inherit;
+      border-radius: 4px;
+    }
+    .form-control:focus { border-color: var(--accent-gold); outline: none; }
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--accent-gold), var(--accent-orange));
+      border: none;
+      color: var(--bg-dark);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: transform 0.2s;
+    }
+    .submit-btn:hover { transform: translateY(-2px); }
+    
+    /* Dynamic Feedback Box */
+    .feedback-box {
+      display: none;
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--accent-gold);
+      padding: 30px;
+      border-radius: 6px;
+      margin-top: 20px;
+      text-align: left;
+      animation: fadeIn 0.4s ease;
+    }
+    .feedback-box h4 { color: var(--accent-gold); margin-bottom: 10px; font-size: 1.2rem; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @media (max-width: 768px) {
+      .hero-content h1 { font-size: 2.3rem; }
+      .pillar-nav { flex-wrap: wrap; gap: 10px; }
+      .story-card { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="hero-side">
-            <div class="brand-tag">Unstoppable You 365</div>
-            <h1>Presence Before Perfection</h1>
-            <p class="quote">Beginning with stillness. Leading with clarity. Elevating your vision every single day of the year.</p>
-        </div>
-
-        <div class="form-side">
-            <div class="form-box">
-                <h2>Receive This Daily</h2>
-                <p class="form-desc">An encouraging word, a strategic breakdown, and a clear vision delivered directly to your inbox before your day even hits its stride.</p>
-                
-                <form action="#" method="POST" onsubmit="alert('Vision logged! Connecting subscription service next.'); return false;">
-                    <div class="input-group">
-                        <input type="email" placeholder="Enter your email address" required>
-                    </div>
-                    <button type="submit">
-                        RECEIVE THIS DAILY &rarr;
-                    </button>
-                </form>
-            </div>
-        </div>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>UNSTOPPABLE YOU 365</h1>
+      <p>RESILIENCE • FAITH • LEADERSHIP</p>
     </div>
+  </header>
 
+  <nav class="pillar-nav">
+    <button class="pillar-btn active" onclick="switchTab('faith')">Faith</button>
+    <button class="pillar-btn" onclick="switchTab('hope')">Hope</button>
+    <button class="pillar-btn" onclick="switchTab('resilience')">Resilience</button>
+    <button class="pillar-btn" onclick="switchTab('wisdom')">Wisdom</button>
+  </nav>
+
+  <main class="content-section">
+    
+    <article id="faith" class="story-card active">
+      <h2 class="story-title">The Altar in the Dark</h2>
+      <div class="story-body">
+        Consider the account of a woman who stood in relentless prayer for eleven consecutive months without a single outward sign of change. To the casual observer, her words vanished into the rafters. Despair regularly knocked, whispering that her stillness was proof of abandonment. 
+
+        But alignment is not defined by instant manifestation. While the surface remained completely frozen, her spiritual roots were diving deeper into the bedrock, anchoring into a level of stability that no future storm could ever shake loose. Her breakthrough wasn't delayed; it was being fortified.
+      </div>
+      <div class="framework-box">
+        <div class="framework-title">THE REFOCUS FRAMEWORK</div>
+        <ul class="steps-list">
+          <li data-step="1.">**Acknowledge the Silence:** Accept that an absence of visible movement does not equate to an absence of divine activity.</li>
+          <li data-step="2.">**Audit Your Foundations:** Stop scanning the horizon for immediate answers and focus on anchoring your internal convictions.</li>
+          <li data-step="3.">**Protect the Morning Catalyst:** Set your mind upon eternal truths the absolute moment your eyes open before the world claims your focus.</li>
+          <li data-step="4.">**Stand in Covenant:** Execute your responsibilities and continue showing up based on the promise, not based on temporary emotional trends.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="hope" class="story-card">
+      <h2 class="story-title">After the Burial, Morning</h2>
+      <div class="story-body">
+        When an enterprise or a lifelong dream collapses entirely under a heavy weight, the immediate visceral feeling is one of absolute finality. You feel permanently buried under the ruins. 
+
+        However, in the economy of resilience, a collapse is rarely a graveyard—it is a seedbed. The dirt that feels suffocating right now is actually rich compost specifically designed to feed and develop the next, far more authoritative version of who you are meant to become. Your current testimony is still actively in progress.
+      </div>
+      <div class="framework-box">
+        <div class="framework-title">THE TRANSFORMATION FRAMEWORK</div>
+        <ul class="steps-list">
+          <li data-step="1.">**Reframe the Soil:** Intentionally redefine the heavy pressure you feel as preparation and nutrient development, not execution.</li>
+          <li data-step="2.">**Identify the Composed Material:** Look square at what failed and extract the raw, hard lessons to reuse as building blocks.</li>
+          <li data-step="3.">**Silence the Post-Mortem:** Refuse to let regret loop continuously in your mind; what is done is now raw fuel for the future.</li>
+          <li data-step="4.">**Prepare for Dawn:** Actively set up the operational structures for your next move while it is still completely dark outside.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="resilience" class="story-card">
+      <h2 class="story-title">The Weight Was the Work</h2>
+      <div class="story-body">
+        We often pray for our burdens to be instantly lifted, forgetting that muscle is only created through continuous, intense resistance. 
+
+        Think of the leader who broke down completely in a dark parking lot, completely exhausted and thoroughly spent, convinced they had failed the mission. They hadn't failed; they were simply hitting the natural limit of their old capacity. The extreme weight of that season wasn’t sent to break them—it was the exact machinery required to forge iron inside their spirit. Exhaustion is not structural failure; it is recalibration.
+      </div>
+      <div class="framework-box">
+        <div class="framework-title">THE FORGE FRAMEWORK</div>
+        <ul class="steps-list">
+          <li data-step="1.">**Honor the Exhaustion:** Recognize that feeling tired is a standard physical tax of heavy load-bearing, not a sign of personal weakness.</li>
+          <li data-step="2.">**Isolate the Load:** Separate the real facts of your current challenge from the emotional storytelling your mind wants to generate.</li>
+          <li data-step="3.">**Calibrate Under Pressure:** Intentionally smooth out your breathing and stabilize your decisions right in the middle of chaos.</li>
+          <li data-step="4.">**Step Back Inside the Ring:** Stand back up, clear your workspace, and execute the very next correct tactical action with total discipline.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article id="wisdom" class="story-card">
+      <h2 class="story-title">The Crossroads Is the Classroom</h2>
+      <div class="story-body">
+        Many individuals spend months gathering endless data points, reading reports, and scheduling endless consultations under the guise of "seeking wisdom." 
+
+        But a seasoned leader knows that more information cannot fix a deep courage problem. The path forward at a major life crossroads is usually already entirely clear; the delay comes from avoiding the heavy weight of the execution. True wisdom means muting the noise around you so you can clearly hear and obey the still, small voice of true direction.
+      </div>
+      <div class="framework-box">
+        <div class="framework-title">THE WISDOM FRAMEWORK</div>
+        <ul class="steps-list">
+          <li data-step="1.">**Halt the Data Collection:** Stop gathering extra opinions and cut off the clutter that is clouding your judgment.</li>
+          <li data-step="2.">**Isolate the Core Directive:** Identify the exact, singular truth you already know you need to execute but have been delaying.</li>
+          <li data-step="3.">**Consult Your Foundations:** Align your next strategic move strictly with your core operational principles and your faith.</li>
+          <li data-step="4.">**Execute with Audacity:** Step forward boldly, knowing clarity doesn't come before the step—it unrolls right as your foot hits the path.</li>
+        </ul>
+      </div>
+    </article>
+
+  </main>
+
+  <section class="prayer-container">
+    <h3>Standing in Alignment</h3>
+    <p>Submit your focus area below to lock in your alignment. We stand firmly with you.</p>
+    
+    <form id="alignmentForm" onsubmit="handleFormSubmit(event)">
+      <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" class="form-control" placeholder="Enter your name" required>
+      </div>
+      <div class="form-group">
+        <label for="focusArea">Current Focus / Challenge Area</label>
+        <select id="focusArea" class="form-control" required>
+          <option value="Faith & Alignment">Faith & Alignment (Standing in Covenant)</option>
+          <option value="Hope & Overcoming">Hope & Overcoming (Breaking Despair)</option>
+          <option value="Resilience & Fortitude">Resilience & Fortitude (Enduring the Storm)</option>
+          <option value="Guidance & Wisdom">Guidance & Wisdom (Crossroads Clarity)</option>
+        </select>
+      </div>
+      <button type="submit" class="submit-btn">Lock In Alignment</button>
+    </form>
+
+    <div id="feedbackBox" class="feedback-box">
+      <h4 id="feedbackTitle">Alignment Confirmed</h4>
+      <p id="feedbackMessage"></p>
+    </div>
+  </section>
+
+  <script>
+    // Tab Navigation Logic for Readings
+    function switchTab(pillarId) {
+      document.querySelectorAll('.story-card').forEach(card => card.classList.remove('active'));
+      document.querySelectorAll('.pillar-btn').forEach(btn => btn.classList.remove('active'));
+      
+      document.getElementById(pillarId).classList.add('active');
+      event.target.classList.add('active');
+    }
+
+    // Dynamic 40-Message Randomizer Engine (Curated from Claude's library)
+    const messages = {
+      "Faith & Alignment": [
+        "We stand in absolute covenant agreement with you. The surface may seem unchanged, but your roots are anchoring deeper into bedrock right now.",
+        "Alignment is quiet before it is loud. Your words have not vanished—they are being actively woven into a firm, lasting foundation.",
+        "Let the horizon clear itself while you double down on your foundational truth. We lock shield and spirit with you today.",
+        "The altar in the dark is where real authority is built. Trust the placement, maintain the watch, and do not fold.",
+        "Your covenant is secure. Stand still and let the inner noise settle—the blueprint is already working in your favor.",
+        "We echo your petition in complete unity. The timeline belongs to wisdom, but the victory is already signed.",
+        "Conviction outweighs your current visibility. Keep your eyes fixed on the promise and execute your day with precision.",
+        "The delay is not a denial—it is a massive structural reinforcement. Stand firm in your assignment.",
+        "No ground is lost while your faith remains anchored. We stand in agreement for complete structural peace in your house.",
+        "Let go of the need to control the outcome and lock back into the covenant. You are completely covered."
+      ],
+      "Hope & Overcoming": [
+        "Your current situation is a seedbed, not a cemetery. That heavy pressure is preparing the soil for an undeniable comeback.",
+        "The cloud of despair has no structural power over your future. A testimony is actively being forged from this very moment.",
+        "You are buried but not finished. The ground you are standing on is turning into rich compost for an authoritative next chapter.",
+        "We stand against the lie of finality with you. This transition is birth, not destruction.",
+        "Look past the rubble and see the space being cleared for a grander build. Keep moving forward.",
+        "Your script is not done being written. Breathe deeply, ground your mind, and prepare for a clean dawn.",
+        "The emotional weight of yesterday cannot lock the doors of tomorrow. You are fully equipped to break through.",
+        "We speak light into the dark spaces of your strategy. This trial is simply the raw canvas for your greatest victory.",
+        "Stand tall knowing that your endurance under pressure is inspiring eyes you cannot even see right now.",
+        "The cloud is temporary; your design is eternal. Step boldly out of the shadow and back into your power."
+      ],
+      "Resilience & Fortitude": [
+        "Exhaustion is not a structural failure—it is a heavy-duty calibration. Your spirit is turning into raw iron under this weight.",
+        "The forge is incredibly hot, but it is refining your capacity, not burning your value. Stand firm in the heat.",
+        "We lock shields with your grit today. You have hit the edge of your old strength so that a deeper power can activate.",
+        "The parking lot breakdown was a milestone, not an end. Smooth your breathing, clear your desk, and step back into the ring.",
+        "You are entirely built to bear this load. Isolate the facts from the worry and execute the next tactical play.",
+        "The storm is testing your framework, but your structural integrity is guaranteed. Hold the line.",
+        "Grit is quiet discipline repeated one thousand times. We stand shoulder to shoulder with your endurance.",
+        "Let the chaos rage outside your borders; inside, your fortress remains unshakable and calm.",
+        "You haven't been broken; you've simply been disassembled so you can be built back far heavier and stronger.",
+        "Take a deep breath and stand your ground. You have survived 100% of your worst days up to this point."
+      ],
+      "Guidance & Wisdom": [
+        "The crossroads is not a trap; it is a premium classroom. Stop collecting opinions and listen to that still, small voice.",
+        "You don't have an information problem—you have a courage deployment opportunity. Step forward and the path will unroll.",
+        "Wisdom requires absolute quiet. Turn down the volume of the crowd and execute what you already know is correct.",
+        "Strategic clarity is hitting your space right now. Trust your seasoned instincts and move with audacity.",
+        "The directive is clear when your values are non-negotiable. Stand on your principles and let the pieces land where they may.",
+        "We align with you for sharp, razor-focused discernment today. Cut away the visual clutter and see the true open door.",
+        "A leader looks at the map but moves with their gut. Your history and faith have prepared you perfectly for this choice.",
+        "Do not fear the transition. The wisdom to manage the new territory is already locked deep inside your experience.",
+        "The right move is rarely the easiest one, but it is the only one that carries true longevity. Move with honor.",
+        "Rest your mind from the calculations. The true strategy will clarify the second you silence the external noise."
+      ]
+    };
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('firstName').value;
+      const category = document.getElementById('focusArea').value;
+      
+      // Pull random array from selected category
+      const options = messages[category];
+      const randomIndex = Math.floor(Math.random() * options.length);
+      const chosenMessage = options[randomIndex];
+      
+      // Inject details dynamically into the view
+      document.getElementById('feedbackTitle').innerText = `Alignment Locked In, ${name}`;
+      document.getElementById('feedbackMessage').innerText = `"${chosenMessage}"`;
+      
+      // Display the hidden feedback panel smoothly
+      const box = document.getElementById('feedbackBox');
+      box.style.display = 'block';
+      box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      
+      // Optional: Clear form text to show success reset
+      document.getElementById('alignmentForm').reset();
+    }
+  </script>
 </body>
 </html>
