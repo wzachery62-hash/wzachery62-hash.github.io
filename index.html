@@ -882,6 +882,16 @@
   });
   </script>
 </body>
+ <script>
+  if (window.location.search.includes('submitted=true') || document.referrer.includes('make.com')) {
+    const msgBox = document.createElement('div');
+    msgBox.innerHTML = 'Thanks for joining the family! Have an amazing day. You are Unstoppable.';
+    msgBox.style.cssText = 'position:fixed; top:20px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, #FF8C00, #FFB347); color:#00004d; padding:16px 24px; font-family:sans-serif; font-weight:bold; border-radius:8px; box-shadow:0 8px 32px rgba(0,0,0,0.5); z-index:9999; text-align:center;';
+    document.body.appendChild(msgBox);
+    window.history.replaceState({}, document.title, window.location.pathname);
+    setTimeout(() => { msgBox.remove(); }, 4000);
+  }
+</script>
 </html>
 
    
