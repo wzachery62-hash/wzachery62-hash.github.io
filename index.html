@@ -1040,6 +1040,21 @@
     restart();
   })();
   </script>
+<script>
+(function(){
+  var form=document.querySelector('form[action*="make.com"]');
+  if(!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var box=document.createElement('div');
+    box.textContent="Thank you for your interest! The 6 AM daily email is currently under construction. Check back soon.";
+    box.style.cssText='position:fixed; top:20px; left:50%; transform:translateX(-50%); background:linear-gradient(135deg, #FF8C00, #FFB347); color:#00004d; padding:16px 24px; font-family:sans-serif; font-weight:bold; border-radius:8px; z-index:9999;';
+    document.body.appendChild(box);
+    form.reset();
+    setTimeout(function(){ box.remove(); }, 4000);
+  });
+})();
+</script>
 </body>
  <script>
   if (window.location.search.includes('submitted=true') || document.referrer.includes('make.com')) {
