@@ -4,7 +4,7 @@
 set -e
 cd "$(dirname "$0")"
 
-mkdir -p "raw footage" references exports studio
+mkdir -p "raw footage" references exports
 
 if ! command -v brew >/dev/null; then
   echo "Installing Homebrew (it will ask for your Mac password)..."
@@ -20,10 +20,8 @@ python3.12 -m venv .venv
 ./.venv/bin/pip install --upgrade pip
 ./.venv/bin/pip install openai-whisper
 
-# Remotion + Hyperframes live in the studio folder
-cd studio
+# Remotion + Hyperframes install into this folder (no extra subfolder)
 [ -f package.json ] || npm init -y >/dev/null
 npm install remotion @remotion/cli @remotion/bundler @remotion/renderer react react-dom hyperframes
-cd ..
 
 bash verify.sh

@@ -6,7 +6,8 @@ Claude reads this file every time you open this folder in Claude Code.
 - `raw footage/` — unedited phone/camera clips. Never modify or delete these.
 - `references/` — style/pacing examples (yt-dlp downloads go here).
 - `exports/` — finished videos only.
-- `studio/` — Remotion + Hyperframes projects.
+- Only these three folders. No B-roll folder, no extra folders.
+- Remotion + Hyperframes are installed in this main folder.
 - Whisper: `./.venv/bin/whisper` (Windows: `.\.venv\Scripts\whisper`). Default model `small`, `--language en`.
 
 ## Output spec (every export)
