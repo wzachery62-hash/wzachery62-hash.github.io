@@ -1,0 +1,4 @@
+Set up my local AI video editing environment in this folder.
+Run setup-mac.sh (or setup-windows.ps1 on Windows), fix anything that fails, and run verify.sh until all 5 tools pass:
+FFmpeg, OpenAI Whisper, yt-dlp, Remotion, and Hyperframes.
+Then read CLAUDE.md and follow it for every edit: trim raw footage, generate synced captions in the upper-middle safe zone, and render 1080x1920 vertical MP4s with audio into exports/.
